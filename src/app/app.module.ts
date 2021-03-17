@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
