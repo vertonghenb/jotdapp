@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { JokeDataService } from '../joke-data.service';
+import { Joke } from '../joke.model';
 
 @Component({
   selector: 'app-joke',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./joke.component.css']
 })
 export class JokeComponent implements OnInit {
+  @Input() public joke: Joke
 
-  constructor() { }
+  constructor(private _jokeDataService : JokeDataService) { }
+
+  deleteJoke(){
+    this._jokeDataService.deleteJoke(this.joke.id);
+  }
 
   ngOnInit(): void {
   }

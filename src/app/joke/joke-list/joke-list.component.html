@@ -3,6 +3,6 @@
 
 <mat-grid-list cols="4" rowHeight="2:1">
     <mat-grid-tile *ngFor="let joke of jokes">
-        {{joke.id}}
+        <app-joke [joke]="joke"></app-joke>
     </mat-grid-tile>
 </mat-grid-list>
