@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JokeDataService } from '../joke-data.service';
+import { Joke } from '../joke.model';
 
 @Component({
   selector: 'app-joke-list',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JokeListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _jokeDataService : JokeDataService) { }
+
+  getRandomJoke() : void {
+    this._jokeDataService.getRandomJoke();
+  }
+
+  get jokes() : Array<Joke> {
+    return this._jokeDataService.jokes;
+  }
 
   ngOnInit(): void {
   }

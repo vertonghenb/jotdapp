@@ -1,1 +1,8 @@
-<p>joke-list works!</p>
+<h4>Some Jokes a day... </h4>
+<button mat-button (click)="getRandomJoke()">Make me laugh</button>
+
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let joke of jokes">
+        {{joke.id}}
+    </mat-grid-tile>
+</mat-grid-list>
